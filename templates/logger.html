@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>WebCrawler Logger</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+    height: 200px;
+    background: #aaa;
+  }
+  </style>
+</head>
+<body>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <h1>WebCrawler Logger Homepage</h1>
+  <p>Crawl any site!</p> 
+</div>
+
+<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+  <a class="navbar-brand" href="#">Navbar</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:5000/crawl/vieclam24h">vieclam24h</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:5000/crawl/vnexpress">vnexpress</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="http://localhost:5000/crawl/aliexpress">aliexpress</a>
+      </li>    
+    </ul>
+  </div>  
+</nav>
+
+<div class="container" style="margin-top:30px">
+    <table border="1" class="dataframe" id="crawl_data">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>title</th>
+      <th>description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>Chưa chốt Quốc hội hay Chính phủ quyết danh mụ...</td>
+      <td>Tỷ lệ biểu quyết chọn phương án Quốc hội hay C...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>Cao tốc Bắc - Nam đoạn phía Đông có thể khởi c...</td>
+      <td>Trong số các hồ sơ mời thầu có tới 6 nhà đầu t...</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>Ngành công nghiệp ôtô mất 17 tỷ USD vốn hóa sa...</td>
+      <td>Mexico là nguồn nhập khẩu xe và phụ tùng lớn n...</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>Máy lạnh trở thành ngành hàng chủ lực thứ hai ...</td>
+      <td>Với tỷ lệ hàng tiêu thụ vượt dự tính, chủ tịch...</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Phú Long được vinh danh tại giải thưởng khu vự...</td>
+      <td>Đơn vị được ban tổ chức BCI Asia Award vinh da...</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>5</td>
+      <td>Trung Quốc nói không ngại chiến tranh thương m...</td>
+      <td>Trung Quốc phủ nhận việc thay đổi cam kết và c...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>6</td>
+      <td>Thuế của ông Trump đang bóp nghẹt ngành nội th...</td>
+      <td>Nhiều công ty Mỹ còn chưa vượt qua khó khăn vớ...</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>7</td>
+      <td>FedEx rơi vào tầm ngắm trả đũa của Trung Quốc ...</td>
+      <td>Sau vụ chuyển nhầm bưu kiện của Huawei, FedEx ...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>8</td>
+      <td>Nguyên chủ tịch doanh nghiệp bị phạt 600 triệu...</td>
+      <td>Bà Hoàng Thu Hoài giữ chức Chủ tịch Hội đồng q...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>9</td>
+      <td>Trump 'châm ngòi' căng thẳng thương mại với Ấn Độ</td>
+      <td>Việc loại Ấn Độ ra khỏi cơ chế hưởng ưu đãi nh...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>10</td>
+      <td>Bốn việc phí tiền tuổi 20 mà triệu phú Mỹ thấy...</td>
+      <td>Theo triệu phú Grant Cardone, người trẻ tránh ...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>11</td>
+      <td>Mực, bạch tuộc Việt Nam bán mạnh sang Hàn Quốc</td>
+      <td>Tiền bán mực và bạch tuộc của Việt Nam cho Hàn...</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>12</td>
+      <td>Giá xăng tiếp tục giảm</td>
+      <td>Mỗi lít xăng RON 95 giảm 380 đồng, xăng E5 RON...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>13</td>
+      <td>Thuế trả đũa của Trung Quốc với Mỹ có hiệu lực</td>
+      <td>Căng thẳng thương mại giữa hai nền kinh tế lớn...</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>14</td>
+      <td>Đầu tư homestay, airbnb lỗ sạch vốn vì ế khách</td>
+      <td>Chi 200 triệu đồng thuê nhà quận 1, TP HCM, là...</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>15</td>
+      <td>Chi 4,5 triệu USD để ăn trưa với Warren Buffett</td>
+      <td>Đây là con số kỷ lục trong 20 năm sự kiện này ...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>16</td>
+      <td>Trung Quốc có thể chỉ đang dọa Mỹ để chừa đườn...</td>
+      <td>Theo giới quan sát, Trung Quốc đang tìm cách đ...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>17</td>
+      <td>Vì sao Tiki dốc tiền làm âm nhạc?</td>
+      <td>Dù đang lỗ như nhiều tên tuổi thương mại điện ...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>18</td>
+      <td>Chứng khoán toàn cầu mất 2.000 tỷ USD vì căng ...</td>
+      <td>Chiến tranh thương mại Mỹ - Trung Quốc leo tha...</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>19</td>
+      <td>Thủ tướng: 'Viettel cần vào top 10 doanh nghiệ...</td>
+      <td>Viettel được Thủ tướng giao nhiệm vụ đi đầu cu...</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>20</td>
+      <td>Hai kỳ tích trong 30 năm làm viễn thông của Vi...</td>
+      <td>Doanh nghiệp từng bước phá vỡ rào càn chi phí ...</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>21</td>
+      <td>Kymdan giảm 5%, tặng quà trị giá đến 11 triệu ...</td>
+      <td>Hóa đơn mua nệm 25 triệu đồng trở lên được giả...</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>22</td>
+      <td>Trung Quốc có đủ USD cho cuộc chiến thương mại...</td>
+      <td>Một số nhà phân tích cho rằng 3.100 tỷ USD dự ...</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>23</td>
+      <td>Lần đầu tiên hàng Việt được ưu tiên tại hội ch...</td>
+      <td>Trong số 400 khu trưng bày tại "Hội chợ quốc t...</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>24</td>
+      <td>'Đại gia' đổ tiền làm trung gian thanh toán</td>
+      <td>Sở hữu một trung gian thanh toán đang là đích ...</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>25</td>
+      <td>Hàng quán đắt khách nhờ bùng nổ dịch vụ giao đ...</td>
+      <td>Không chỉ hàng quán, tài xế mà ngay cả các đơn...</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>26</td>
+      <td>Tài phiệt từng mất 35 tỷ USD một năm muốn tìm ...</td>
+      <td>Eike Batista từng là người giàu thứ 8 thế giới...</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>27</td>
+      <td>Bất động sản đang dự trữ vốn gấp 3,5 lần GDP t...</td>
+      <td>Tổng giá trị bất động sản toàn cầu đạt hơn 280...</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>28</td>
+      <td>Sẽ buộc tái xuất container rác phế liệu không ...</td>
+      <td>Cơ quan chức năng sẽ phân loại container rác p...</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>29</td>
+      <td>VN-Index mất mốc 960 điểm</td>
+      <td>Đà bán mạnh cuối phiên kéo chỉ số đại diện Sở ...</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>30</td>
+      <td>Agribank tăng lãi hơn 60% năm 2018</td>
+      <td>Phần lớn tăng trưởng lợi nhuận của Agribank vẫ...</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>31</td>
+      <td>Bộ trưởng Tài chính: Nhiều dự án BT không theo...</td>
+      <td>Người đứng đầu ngành tài chính cho biết nhiều ...</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>32</td>
+      <td>Grab và Quỹ Bảo trợ Trẻ em hợp tác xây cầu cho...</td>
+      <td>Doanh nghiệp chung tay nhằm giúp con đường đến...</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>33</td>
+      <td>Thủ tướng: 'Viettel cần vào top 10 doanh nghiệ...</td>
+      <td>Viettel được Thủ tướng giao nhiệm vụ đi đầu cu...</td>
+    </tr>
+    <tr>
+      <th>34</th>
+      <td>34</td>
+      <td>Kymdan giảm 5%, tặng quà trị giá đến 11 triệu ...</td>
+      <td>Hóa đơn mua nệm 25 triệu đồng trở lên được giả...</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>35</td>
+      <td>Không gian nghỉ dưỡng tại dự án mang phong các...</td>
+      <td>Quảng trường, hồ bơi phong cách kiến Mã, trung...</td>
+    </tr>
+    <tr>
+      <th>36</th>
+      <td>36</td>
+      <td>Tầm nhìn kiến tạo của Bitexco qua những dự án ...</td>
+      <td>Trong phân khúc bất động sản cao cấp tại Việt ...</td>
+    </tr>
+    <tr>
+      <th>37</th>
+      <td>37</td>
+      <td>Nguyên chủ tịch doanh nghiệp bị phạt 600 triệu...</td>
+      <td>Bà Hoàng Thu Hoài giữ chức Chủ tịch Hội đồng q...</td>
+    </tr>
+    <tr>
+      <th>38</th>
+      <td>38</td>
+      <td>Thẻ tín dụng mới của MSB hoàn tiền tới 20% khi...</td>
+      <td>Tổng số tiền chủ thẻ tín dụng MSB Visa Online ...</td>
+    </tr>
+    <tr>
+      <th>39</th>
+      <td>39</td>
+      <td>Bốn lý do nên sử dụng blockchain trong ngành b...</td>
+      <td>Công nghệ giúp bảo mật dữ liệu, thanh toán an ...</td>
+    </tr>
+    <tr>
+      <th>40</th>
+      <td>40</td>
+      <td>25% người Mỹ lo lắng chuyện tiền bạc 'mọi lúc ...</td>
+      <td>Các chi phí chủ yếu như nhà ở hay vay học đại ...</td>
+    </tr>
+    <tr>
+      <th>41</th>
+      <td>41</td>
+      <td>Sản xuất của Trung Quốc giảm mạnh hơn dự kiến</td>
+      <td>Sản xuất đi xuống sẽ khiến Bắc Kinh chịu thêm ...</td>
+    </tr>
+    <tr>
+      <th>42</th>
+      <td>42</td>
+      <td>Hahalolo khai trương chi nhánh mới tại Hà Nội</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>43</td>
+      <td>Mai-Archi hai lần liên tiếp được BCI Asia Awar...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>44</th>
+      <td>44</td>
+      <td>Chính sách định cư Mỹ an toàn qua chương trình...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>45</th>
+      <td>45</td>
+      <td>Acecook Việt Nam ra mắt mì Samưrai với 7 gia v...</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>46</th>
+      <td>46</td>
+      <td>Celadon City được vinh danh khu đô thị đẳng cấ...</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<div class="jumbotron text-center" style="margin-bottom:0">
+  <p>@Copyright 2019</p>
+</div>
+
+</body>
+</html>
